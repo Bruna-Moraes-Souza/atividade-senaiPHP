@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select, input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #a9d2f1;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #273ab6;
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #6275c9;
+        }
+    </style>
+</head>
+<body>
+    <form action="salvar.php" method="post">
+        <label for="tipo">Tipo:</label>
+        <select name="tipo" required>
+            <option value="">Selecione</option>
+            <option value="Professor">Professor</option>
+            <option value="Aluno">Aluno</option>
+        </select>
+
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+
+        <label for="disciplina">Disciplina (se for Professor):</label>
+        <input type="text" name="disciplina">
+
+        <label for="matricula">Matrícula (se for Aluno):</label>
+        <input type="text" name="matricula">
+
+        <input type="submit" value="Salvar">
+    </form>
+</body>
+</html>
